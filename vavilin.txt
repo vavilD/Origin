@@ -1,0 +1,29 @@
+Private Sub CommandButton1_Click()
+Dim sale As Single
+Dim i As Integer
+i = Worksheets("Накладная").Range("A3").CurrentRegion.Rows.Count + 1
+With Worksheets("Накладная")
+.Cells(2 + i, 3).Value = Worksheets("Форма").TextBox5.Text
+.Range("B3") = Worksheets("Форма").TextBox1.Text
+.Range("C3") = Worksheets("Форма").TextBox2.Text
+.Range("B4") = Worksheets("Форма").TextBox3.Text
+.Range("C4") = Worksheets("Форма").TextBox4.Text
+.Cells(2 + i, 1).Value = Worksheets("Форма").ComboBox1.Text
+End With
+sale = 0
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Компьютер" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(2, 2).Value
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Монитор" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(3, 2).Value
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Процессор" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(4, 2).Value
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Материнская плата" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(5, 2).Value
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Клавиатура" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(6, 2).Value
+If Worksheets("Накладная").Cells(2 + i, 1).Value = "Системный блок" Then Worksheets("Накладная").Cells(2 + i, 2).Value = Worksheets("Товары").Cells(7, 2).Value
+If Worksheets("Форма").CheckBox1.Value = True Then sale = sale + Worksheets("Услуги").Cells(2, 2).Value
+If Worksheets("Форма").CheckBox2.Value = True Then sale = sale + Worksheets("Услуги").Cells(3, 2).Value
+If Worksheets("Форма").CheckBox3.Value = True Then sale = sale + Worksheets("Услуги").Cells(4, 2).Value
+If Worksheets("Форма").CheckBox1.Value = True Then sale = sale + Worksheets("Услуги").Cells(5, 2).Value
+Worksheets("Накладная").Cells(2 + i, 4).Value = sale
+With Worksheets("Накладная")
+.Cells(2 + i, 5).Value = .Cells(2 + i, 2).Value * .Cells(2 + i, 3).Value + .Cells(2 + i, 4).Value
+End With
+i = 0
+End Sub
