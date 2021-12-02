@@ -11,3 +11,8 @@ Cells(13, 6) = "=E13*10%"
 End If
 Cells(13, 7) = "=E13-F13"
 End Sub
+Private Sub CommandButton2_Click()
+Worksheets("Накладная").Range("a7:g12").ClearContents
+Worksheets("Накладная").Range("b3:c5").ClearContents
+Worksheets("Накладная").Range("b13:g13").ClearContents
+End Sub
