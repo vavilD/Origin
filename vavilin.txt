@@ -28,3 +28,14 @@ With Worksheets("Накладная")
 End With
 i = 0
 End Sub
+Private Sub CommandButton2_Click()
+TextBox1.Text = ""
+TextBox2.Text = ""
+TextBox5.Text = ""
+TextBox4.Text = ""
+TextBox3.Text = ""
+CheckBox1.Value = False
+CheckBox2.Value = False
+CheckBox3.Value = False
+CheckBox4.Value = False
+End Sub
