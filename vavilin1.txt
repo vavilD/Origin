@@ -1,0 +1,13 @@
+Private Sub CommandButton1_Click()
+Cells(13, 5) = "=E8+E9+E10+E11+E12"
+If Cells(13, 5) > 1000 And Cells(13, 5) < 10000 Then
+Cells(13, 6) = "=E13*1%"
+End If
+If Cells(13, 5) > 10000 And Cells(13, 5) < 100000 Then
+Cells(13, 6) = "=E13*5%"
+End If
+If Cells(13, 5) > 100000 Then
+Cells(13, 6) = "=E13*10%"
+End If
+Cells(13, 7) = "=E13-F13"
+End Sub
